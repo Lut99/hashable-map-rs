@@ -1,8 +1,15 @@
-# hashable-map-rs
+[package]
+name = "hashable-map"
+version = "0.1.0"
+edition = "2024"
+authors = ["Lut99"]
+repository = "https://github.com/Lut99/hashable-map-rs"
+license = "Apache-2.0"
+description = """
 Implements a so-called `HashableMap`, which is exactly like a HashMap but with some performance traded in for determinism in some cases.
 
 
-## Installation
+# Installation
 To use this library in your Rust project, simply add it to your `Cargo.toml` file:
 ```toml
 [dependencies]
@@ -22,7 +29,7 @@ hashable-map = { git = "https://github.com/Lut99/hashable-map-rs", features = ["
 ```
 
 
-## Usage
+# Usage
 The only type exported by this crate is the `HashableMap` type. It wraps a normal `HashMap` nearly transparently, except for a few changes:
 - The HashableMap implements `Hash`. It does so by first ordering the keys by their `Ord`-implementation, then hashing the keys & values in that order. This will provide a map- and `RandomState`-independent fixed ordering that makes the hashes the same.
 - In the same way, the library provides variants of `iter()`- `keys()`- and `values()`-functions ending in `_fixed` that always iterate in the order determined by the key's `Ord`-implementation.
@@ -63,7 +70,7 @@ for _ in 0..100 {
 }
 ```
 
-### Features
+## Features
 The project has the following feature flags:
 - `ast-toolkit`: Enables a `Spanning`-implementation from the [`ast-toolkit`](https://github.com/Lut99/ast-toolkit-rs)-crate on the `HashableMap`.
 - `serde`: Enables a `Serialize`- and `Deserialize`-implementation on the `HashableMap`. They will always serialize in the order indicated by `K`.
@@ -85,9 +92,26 @@ The project has the following feature flags:
   ```
 
 
-## Contribution
+# Contribution
 Feel free to contribute to this crate by [raising an issue](https://github.com/Lut99/hashable-map-rs/issues) or [creating a pull request](https://github.com/Lut99/hashable-map-rs/pulls).
 
 
-## License
+# License
 This project is licensed under the Apache 2.0 license. See [`LICENSE`](./LICENSE) for more information.
+"""
+
+
+[dependencies]
+ast-toolkit = { git = "https://github.com/Lut99/ast-toolkit-rs", default-features = false, features = ["span"], optional = true }
+serde = { version = "1.0.0", features = ["derive"], optional = true }
+
+
+[dev-dependencies]
+serde_json = { version = "1.0.0" }
+
+
+[features]
+default = []
+
+ast-toolkit = ["dep:ast-toolkit"]
+serde = ["dep:serde"]
