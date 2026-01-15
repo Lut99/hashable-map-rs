@@ -102,7 +102,7 @@ This project is licensed under the Apache 2.0 license. See [`LICENSE`](./LICENSE
 
 
 [dependencies]
-ast-toolkit = { git = "https://github.com/Lut99/ast-toolkit-rs", rev = "e242399db68b00fe3097d20de956f1dd22553ca0", default-features = false, features = ["span"], optional = true }
+ast-toolkit = { git = "https://github.com/Lut99/ast-toolkit-rs", rev = "df33461015042f691086e190b4ba8e8d61d661ad", default-features = false, features = ["span"], optional = true }
 serde = { version = "1.0.0", features = ["derive"], optional = true }
 
 
