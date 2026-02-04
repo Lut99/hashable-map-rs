@@ -12,7 +12,7 @@ hashable-map = { git = "https://github.com/Lut99/hashable-map-rs" }
 Optionally, you can commit to a specific version:
 ```toml
 [dependencies]
-hashable-map = { git = "https://github.com/Lut99/hashable-map-rs", tag = "v0.1.0" }
+hashable-map = { git = "https://github.com/Lut99/hashable-map-rs", tag = "v0.1.1" }
 ```
 
 You can enable features with the `features`-key:

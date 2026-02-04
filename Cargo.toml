@@ -1,6 +1,6 @@
 [package]
 name = "hashable-map"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Lut99"]
 repository = "https://github.com/Lut99/hashable-map-rs"
@@ -19,7 +19,7 @@ hashable-map = { git = "https://github.com/Lut99/hashable-map-rs" }
 Optionally, you can commit to a specific version:
 ```toml
 [dependencies]
-hashable-map = { git = "https://github.com/Lut99/hashable-map-rs", tag = "v0.1.0" }
+hashable-map = { git = "https://github.com/Lut99/hashable-map-rs", tag = "v0.1.1" }
 ```
 
 You can enable features with the `features`-key:
@@ -102,7 +102,7 @@ This project is licensed under the Apache 2.0 license. See [`LICENSE`](./LICENSE
 
 
 [dependencies]
-ast-toolkit = { git = "https://github.com/Lut99/ast-toolkit-rs", rev = "df33461015042f691086e190b4ba8e8d61d661ad", default-features = false, features = ["span"], optional = true }
+ast-toolkit = { git = "https://github.com/Lut99/ast-toolkit-rs", rev = "e55e322d1eaa84b5bb0a46124fcb5330bce3bcf3", default-features = false, features = ["span"], optional = true }
 serde = { version = "1.0.0", features = ["derive"], optional = true }
 
 
